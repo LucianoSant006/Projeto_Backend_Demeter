@@ -1,3 +1,5 @@
+package com;
+import javax.sql.DataSource;
 
 import javax.sql.DataSource;
 
@@ -7,6 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+
 
 @Configuration
 public class DataConfiguration {

@@ -30,7 +30,7 @@ public class Permissao implements Serializable {
 	private Date dataCadastro = new Date();
 	
 	@ManyToOne
-	private Funcionarios funcionarios;
+	private Funcionario funcionarios;
 	
 	@ManyToOne
 	private Papel papel;
@@ -51,11 +51,11 @@ public class Permissao implements Serializable {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public Funcionarios getFuncionario() {
+	public Funcionario getFuncionario() {
 		return funcionarios;
 	}
 
-	public void setFuncionario(Funcionarios funcionarios) {
+	public void setFuncionario(Funcionario funcionarios) {
 		this.funcionarios = funcionarios;
 	}
 

@@ -15,7 +15,7 @@ import com.entity.Papel;
 import com.repository.PapelRepository;
 
 
-    @Controller
+@Controller
 public class PapelController {
 	
 	@Autowired

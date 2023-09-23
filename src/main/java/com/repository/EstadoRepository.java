@@ -1,9 +1,9 @@
 package com.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
+import org.springframework.stereotype.Repository;
 import com.entity.Estado;
 
-public interface EstadoRepository extends  JpaRepository <Estado, Long>{
-    
+@Repository
+public interface EstadoRepository extends JpaRepository<Estado, Long> {
 }

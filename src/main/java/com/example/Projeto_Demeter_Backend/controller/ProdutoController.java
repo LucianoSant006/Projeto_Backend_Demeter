@@ -3,6 +3,7 @@ package com.example.Projeto_Demeter_Backend.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import com.entity.Estado;
 import com.entity.Produto;
 import com.repository.ProdutoRepository;
 
+@Controller
 public class ProdutoController {
 
    // private static String caminhoImagens = "Administrador\D//ocuments\imagens\";
@@ -24,9 +26,10 @@ public class ProdutoController {
     @GetMapping("/administrativo/produtos/cadastrar")
     public ModelAndView cadastrar(Produto produto){
         ModelAndView mv = new ModelAndView("administrativo/produtos/cadastro");
-        mv.addObject("cidade",produto);
+        mv.addObject("produto",produto);
         return mv;
     }
+
 @GetMapping("/administrativo/produtos/editar/{id}")
 	public ModelAndView editar(@PathVariable("id") Long id) {
 		Optional<Produto> produto = produtoRepository.findById(id);
@@ -36,7 +39,7 @@ public class ProdutoController {
     @GetMapping("/administrativo/produtos/listar")
     public ModelAndView listar(){
         ModelAndView mv=new ModelAndView("administartivo/produtos/lista");
-        mv.addObject("listaEstados", produtoRepository.findAll());
+        mv.addObject("listaProdutos", produtoRepository.findAll());
         return mv;
     }
     @PostMapping("/adiministrativo/produtos/salvar")

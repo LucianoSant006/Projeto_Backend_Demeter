@@ -17,12 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.entity.Estado;
 import com.repository.EstadoRepository;
 
+
 @Controller
 public class EstadoController {
 	
 	@Autowired
-	private EstadoRepository estadoRepositorio;
-	
+private EstadoRepository estadoRepositorio;
 	
 	@GetMapping("/administrativo/estados/cadastrar")
 	public ModelAndView cadastrar(Estado estado) {

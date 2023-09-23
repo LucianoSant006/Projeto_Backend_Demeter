@@ -15,10 +15,9 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name="funcionarios")
+public class Funcionario implements Serializable {
 
-public class Funcionarios implements Serializable {
-
-    public Funcionarios() {
+    public Funcionario() {
 		super();
 	}
 	
@@ -33,8 +32,10 @@ public class Funcionarios implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dataSaida;
 	private String cargo;
-	//@ManyToOne
-	//private Cidade cidade;
+
+	@ManyToOne
+	private Cidade cidade;
+
 	private String logradouro;
 	private String numero;
 	private String complemento;
@@ -117,6 +118,13 @@ public class Funcionarios implements Serializable {
 
 	public String getBairro() {
 		return bairro;
+	}
+	 public Cidade getcidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 
 	public void setBairro(String bairro) {
