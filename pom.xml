@@ -15,8 +15,8 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-	</properties>
-	<bean id="estadoRepository" class="com.repository.EstadoRepository" />
+	</properties><!--
+	<bean id="estadoRepository" class="com.repository.EstadoRepository" />-->
 	<dependencies>
 	
 		<dependency>
@@ -29,12 +29,12 @@
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
-	<!--
+	
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-security</artifactId>
 	</dependency>
-	-->
+	
 	
 		<dependency>
 			<groupId>com.mysql</groupId>

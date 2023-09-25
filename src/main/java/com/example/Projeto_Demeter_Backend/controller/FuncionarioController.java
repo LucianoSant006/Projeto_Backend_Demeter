@@ -4,6 +4,7 @@ package com.example.Projeto_Demeter_Backend.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -23,6 +24,8 @@ public class FuncionarioController {
 
     @Autowired
     private CidadeRepository cidadeRepository;
+
+     
 
     @GetMapping("/administrativo/funcionarios/cadastrar")
     public ModelAndView cadastrar(Funcionario funcionario){
@@ -57,6 +60,7 @@ public class FuncionarioController {
         if(result.hasErrors()){
             return cadastrar(funcionario);
         }
+        funcionario.setSenha(new BCryptPasswordEncoder().encode(funcionario.getSenha()));
         funcionarioRepository.saveAndFlush(funcionario);
         return cadastrar(new Funcionario());
     }
