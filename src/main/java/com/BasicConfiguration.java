@@ -17,7 +17,6 @@ import org.springframework.util.AntPathMatcher;
 
 @Configuration
 @EnableWebSecurity
-@Order(2)
 public class BasicConfiguration extends WebSecurityConfiguration {
     
 	@Autowired
@@ -29,8 +28,8 @@ public class BasicConfiguration extends WebSecurityConfiguration {
 		 new BCryptPasswordEncoder();
 	}
 
-/* 
-	@Override
+
+	
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// neste método que vamos tratar os usuários
 
@@ -43,19 +42,21 @@ public class BasicConfiguration extends WebSecurityConfiguration {
 
 	}
 
-
-	@Override
+/* 
+     @Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authirizeRequests()
-		.antMatchers("/administrativo/entrada/**").hasAuthority("gerente", "vendedor")
+	http.csrf().disable().authorizeRequests()
+		.antMatchers("/administrativo/entrada/**").hasAuthority("gerente")
 		.antMatchers("/administrativo/**").hasAuthority("gerente", "vendedor")
-		
 		.and().formLogin()
 		.loginPage("/login").permitAll().and().logout()
 		.logoutRequestMatcher(new AntPathMatcher("/logout")).logoutSuccessUrl("/administrativo").and()
 		.execeptionHandLing().accessDeniedPage("/negado");
 
-	}*/
+	}
+	 */
+
+
 
 }
 
